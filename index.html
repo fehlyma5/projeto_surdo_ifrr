@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ação do Dia Nacional do Surdo realizada no IFRR em 26 de setembro.">
+
+    <title>Dia Nacional do Surdo | IFRR</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ACESSIBILIDADE
+    ========================== -->
+
+    <div class="accessibility-bar">
+
+        <button onclick="increaseFont()">
+            A+ Aumentar texto
+        </button>
+
+        <button onclick="decreaseFont()">
+            A- Diminuir texto
+        </button>
+
+        <button onclick="toggleContrast()">
+            Alto contraste
+        </button>
+
+        <button onclick="resetAccessibility()">
+            Resetar
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="#inicio" class="logo">
+
+                <img src="img/logo-ifrr.png"
+                     alt="Logo do Instituto Federal de Roraima">
+
+            </a>
+
+            <nav class="navigation">
+
+                <a href="#inicio">Início</a>
+
+                <a href="#evento">O Evento</a>
+
+                <a href="#libras">Libras</a>
+
+                <a href="#depoimentos">Depoimentos</a>
+
+                <a href="#galeria">Galeria</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO / BANNER
+        ========================== -->
+
+        <section id="inicio" class="hero">
+
+            <div class="slider">
+
+                <div class="slide active">
+
+                    <img src="img/evento-01.jpg"
+                         alt="Participantes durante a ação do Dia Nacional do Surdo no IFRR">
+
+                    <div class="slide-overlay">
+
+                        <div class="hero-content">
+
+                            <span class="event-date">
+                                26 DE SETEMBRO
+                            </span>
+
+                            <h1>
+                                Dia Nacional do Surdo
+                            </h1>
+
+                            <p>
+                                Uma ação de valorização, inclusão,
+                                acessibilidade e reconhecimento da
+                                comunidade surda.
+                            </p>
+
+                            <a href="#evento"
+                               class="btn-primary">
+                                Conheça a ação
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img src="img/evento-02.jpg"
+                         alt="Comunidade participando da ação realizada no IFRR">
+
+                    <div class="slide-overlay">
+
+                        <div class="hero-content">
+
+                            <span class="event-date">
+                                IFRR
+                            </span>
+
+                            <h1>
+                                Comunicação é inclusão
+                            </h1>
+
+                            <p>
+                                Valorizar a Libras é reconhecer
+                                diferentes formas de comunicação.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="slide">
+
+                    <img src="img/evento-03.jpg"
+                         alt="Participantes reunidos durante o evento">
+
+                    <div class="slide-overlay">
+
+                        <div class="hero-content">
+
+                            <span class="event-date">
+                                COMUNIDADE SURDA
+                            </span>
+
+                            <h1>
+                                Nossa voz também é visual
+                            </h1>
+
+                            <p>
+                                Informação acessível para todos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTROLES -->
+
+                <button class="slider-btn prev"
+                        onclick="previousSlide()"
+                        aria-label="Imagem anterior">
+
+                    &#10094;
+
+                </button>
+
+                <button class="slider-btn next"
+                        onclick="nextSlide()"
+                        aria-label="Próxima imagem">
+
+                    &#10095;
+
+                </button>
+
+
+                <!-- INDICADORES -->
+
+                <div class="slider-dots">
+
+                    <button onclick="goToSlide(0)"
+                            class="dot active"
+                            aria-label="Ir para imagem 1">
+                    </button>
+
+                    <button onclick="goToSlide(1)"
+                            class="dot"
+                            aria-label="Ir para imagem 2">
+                    </button>
+
+                    <button onclick="goToSlide(2)"
+                            class="dot"
+                            aria-label="Ir para imagem 3">
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRODUÇÃO
+        ========================== -->
+
+        <section class="intro">
+
+            <div class="container">
+
+                <span class="section-label">
+                    26 DE SETEMBRO
+                </span>
+
+                <h2>
+                    Dia Nacional do Surdo
+                </h2>
+
+                <p>
+                    O Dia Nacional do Surdo é uma oportunidade para
+                    fortalecer a visibilidade da comunidade surda,
+                    promover a acessibilidade e reconhecer a
+                    importância da Língua Brasileira de Sinais,
+                    a Libras.
+                </p>
+
+                <p>
+                    A ação realizada no Instituto Federal de
+                    Roraima – IFRR reuniu pessoas em um momento
+                    de aprendizado, troca de experiências,
+                    conscientização e valorização da cultura surda.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SOBRE O EVENTO
+        ========================== -->
+
+        <section id="evento" class="event-section">
+
+            <div class="container event-grid">
+
+                <div class="event-image">
+
+                    <img src="img/evento-04.jpg"
+                         alt="Registro da ação do Dia Nacional do Surdo">
+
+                </div>
+
+                <div class="event-text">
+
+                    <span class="section-label">
+                        SOBRE A AÇÃO
+                    </span>
+
+                    <h2>
+                        Um espaço para aprender,
+                        compartilhar e incluir
+                    </h2>
+
+                    <p>
+                        A ação realizada no IFRR buscou ampliar
+                        o diálogo sobre a comunidade surda,
+                        acessibilidade e inclusão.
+                    </p>
+
+                    <p>
+                        Mais do que um evento, o encontro representa
+                        um espaço de reconhecimento da identidade,
+                        da cultura e da língua da comunidade surda.
+                    </p>
+
+                    <div class="highlight">
+
+                        <strong>26/09</strong>
+
+                        <span>
+                            Dia Nacional do Surdo
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LIBRAS
+        ========================== -->
+
+        <section id="libras" class="libras-section">
+
+            <div class="container">
+
+                <span class="section-label">
+                    ACESSIBILIDADE
+                </span>
+
+                <h2>
+                    Libras também é comunicação
+                </h2>
+
+                <p>
+                    A Língua Brasileira de Sinais é uma língua
+                    visual-espacial utilizada pela comunidade surda
+                    brasileira.
+                </p>
+
+
+                <div class="libras-cards">
+
+                    <article class="libras-card">
+
+                        <div class="icon">
+                            👋
+                        </div>
+
+                        <h3>
+                            Comunicação
+                        </h3>
+
+                        <p>
+                            A comunicação visual é fundamental
+                            para garantir acessibilidade.
+                        </p>
+
+                    </article>
+
+
+                    <article class="libras-card">
+
+                        <div class="icon">
+                            🤝
+                        </div>
+
+                        <h3>
+                            Inclusão
+                        </h3>
+
+                        <p>
+                            Inclusão significa criar espaços
+                            onde todos possam participar.
+                        </p>
+
+                    </article>
+
+
+                    <article class="libras-card">
+
+                        <div class="icon">
+                            👁️
+                        </div>
+
+                        <h3>
+                            Cultura Surda
+                        </h3>
+
+                        <p>
+                            Valorizar a cultura surda é reconhecer
+                            sua identidade e suas experiências.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DEPOIMENTOS EM VÍDEO
+        ========================== -->
+
+        <section id="depoimentos"
+                 class="testimonials-section">
+
+            <div class="container">
+
+                <span class="section-label">
+                    VOZES DA COMUNIDADE
+                </span>
+
+                <h2>
+                    Depoimentos
+                </h2>
+
+                <p class="section-description">
+                    Assista aos depoimentos dos participantes
+                    da ação.
+                </p>
+
+
+                <div class="video-carousel">
+
+                    <article class="video-card">
+
+                        <div class="video-container">
+
+                            <video controls
+                                   preload="metadata">
+
+                                <source
+                                    src="videos/depoimento-01.mp4"
+                                    type="video/mp4">
+
+                                Seu navegador não suporta vídeos.
+
+                            </video>
+
+                        </div>
+
+                        <div class="video-info">
+
+                            <h3>
+                                Depoimento 01
+                            </h3>
+
+                            <p>
+                                Participante da ação no IFRR.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="video-card">
+
+                        <div class="video-container">
+
+                            <video controls
+                                   preload="metadata">
+
+                                <source
+                                    src="videos/depoimento-02.mp4"
+                                    type="video/mp4">
+
+                                Seu navegador não suporta vídeos.
+
+                            </video>
+
+                        </div>
+
+                        <div class="video-info">
+
+                            <h3>
+                                Depoimento 02
+                            </h3>
+
+                            <p>
+                                Experiência durante o evento.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="video-card">
+
+                        <div class="video-container">
+
+                            <video controls
+                                   preload="metadata">
+
+                                <source
+                                    src="videos/depoimento-03.mp4"
+                                    type="video/mp4">
+
+                                Seu navegador não suporta vídeos.
+
+                            </video>
+
+                        </div>
+
+                        <div class="video-info">
+
+                            <h3>
+                                Depoimento 03
+                            </h3>
+
+                            <p>
+                                Relato sobre inclusão e acessibilidade.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALERIA
+        ========================== -->
+
+        <section id="galeria"
+                 class="gallery-section">
+
+            <div class="container">
+
+                <span class="section-label">
+                    REGISTROS
+                </span>
+
+                <h2>
+                    Momentos da ação
+                </h2>
+
+
+                <div class="gallery">
+
+                    <img src="img/evento-01.jpg"
+                         alt="Participantes do evento">
+
+                    <img src="img/evento-02.jpg"
+                         alt="Atividade realizada no IFRR">
+
+                    <img src="img/evento-03.jpg"
+                         alt="Comunidade reunida">
+
+                    <img src="img/evento-04.jpg"
+                         alt="Momento da ação">
+
+                    <img src="img/evento-05.jpg"
+                         alt="Participantes durante o evento">
+
+                    <img src="img/evento-06.jpg"
+                         alt="Registro da ação do Dia Nacional do Surdo">
+
+                    <img src="img/evento-07.jpg"
+                         alt="Atividade de inclusão e acessibilidade">
+
+                    <img src="img/evento-08.jpg"
+                         alt="Participantes interagindo durante o evento">
+
+                    <img src="img/evento-09.jpg"
+                         alt="Momento de aprendizado e troca de experiências">
+
+                    <img src="img/evento-10.jpg"
+                         alt="Registro da ação realizada no IFRR">
+
+                    <img src="img/evento-11.jpg"
+                         alt="Participantes reunidos durante o evento">
+
+                    <img src="img/evento-12.jpg"
+                         alt="Atividade de conscientização e valorização da comunidade surda">
+
+                    <img src="img/evento-13.jpg"
+                         alt="Registro da ação do Dia Nacional do Surdo">
+
+                    <img src="img/evento-14.jpg"
+                         alt="Participantes interagindo durante o evento">
+
+                    <img src="img/evento-15.jpg"
+                         alt="Momento de aprendizado e troca de experiências">
+
+                    <img src="img/evento-16.jpg"
+                         alt="Registro da ação realizada no IFRR">
+
+                    <img src="img/evento-17.jpg"
+                         alt="Participantes reunidos durante o evento">
+
+                    <img src="img/evento-18.jpg"
+                         alt="Atividade de conscientização e valorização da comunidade surda">
+
+                    <img src="img/evento-19.jpg"
+                         alt="Registro da ação do Dia Nacional do Surdo">
+
+                    <img src="img/evento-20.jpg"
+                         alt="Participantes interagindo durante o evento">
+
+                    <img src="img/evento-21.jpg"
+                         alt="Momento de aprendizado e troca de experiências">
+
+                    <img src="img/evento-22.jpg"
+                         alt="Registro da ação realizada no IFRR">
+
+                    <img src="img/evento-23.jpg"
+                         alt="Participantes reunidos durante o evento">
+
+                    <img src="img/evento-24.png"
+                         alt="Membro da comunidade surda">
+
+                </div>
+
+            </div>
+         
+            
+        </section>
+
+
+<!-- LIGHTBOX: foto ampliada -->
+<div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Galeria de fotos ampliadas"
+    aria-hidden="true"
+>
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Fechar galeria"
+    >
+        &times;
+    </button>
+
+    <button
+        class="lightbox-arrow lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Foto anterior"
+    >
+        &#10094;
+    </button>
+
+    <figure class="lightbox-content">
+        <img id="lightboxImage" src="" alt="">
+
+        <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+
+    <button
+        class="lightbox-arrow lightbox-next"
+        id="lightboxNext"
+        aria-label="Próxima foto"
+    >
+        &#10095;
+    </button>
+
+    <div
+        class="lightbox-counter"
+        id="lightboxCounter"
+        aria-live="polite"
+    >
+        1 / 5
+    </div>
+</div>
+
+
+        <!-- =========================
+             MENSAGEM FINAL
+        ========================== -->
+
+        <section class="final-message">
+
+            <div class="container">
+
+                <h2>
+                    Acessibilidade é para todos.
+                </h2>
+
+                <p>
+                    Que o Dia Nacional do Surdo seja também
+                    um convite para construirmos espaços cada
+                    vez mais acessíveis, inclusivos e respeitosos.
+                </p>
+
+                <a href="#inicio"
+                   class="btn-primary">
+
+                    Voltar ao início
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+
+                <img src="img/logo.jpeg"
+                     class="footer-logo"
+                     alt="Logo da Associação de Surdos de Roraima">
+
+                <p>
+                    Dia Nacional do Surdo
+                </p>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                <p>
+                    Diandro Felipe - TADS/2026
+                    <br>Coordenação Profª Nazita
+                </p>
+
+                <p>
+                    Todos os direitos reservados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
