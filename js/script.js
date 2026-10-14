@@ -309,3 +309,147 @@ lightboxImage.addEventListener("touchend", (event) => {
         previousLightboxImage();
     }
 }, { passive: true });
+
+
+/* =================================
+   LIGHTBOX DE DEPOIMENTOS EM VÍDEO
+================================= */
+
+const testimonialVideos = [
+    ...document.querySelectorAll(".video-card video")
+];
+
+const videoLightbox = document.getElementById("videoLightbox");
+const expandedVideo = document.getElementById("expandedVideo");
+
+const videoCaption = document.getElementById("videoLightboxCaption");
+const videoCounter = document.getElementById("videoLightboxCounter");
+
+const videoClose = document.getElementById("videoLightboxClose");
+const videoPrev = document.getElementById("videoLightboxPrev");
+const videoNext = document.getElementById("videoLightboxNext");
+
+let currentVideoIndex = 0;
+let lastVideoFocus = null;
+
+function showExpandedVideo(index, autoplay = false) {
+    if (!testimonialVideos.length) return;
+
+    currentVideoIndex =
+        (index + testimonialVideos.length) % testimonialVideos.length;
+
+    const originalVideo = testimonialVideos[currentVideoIndex];
+
+    const source = originalVideo.querySelector("source");
+
+    const videoUrl = source
+        ? source.src
+        : originalVideo.currentSrc || originalVideo.src;
+
+    // Para a reprodução anterior antes de trocar
+    expandedVideo.pause();
+
+    if (expandedVideo.src !== videoUrl) {
+        expandedVideo.src = videoUrl;
+        expandedVideo.load();
+    }
+
+    const card = originalVideo.closest(".video-card");
+    const title = card?.querySelector("h3")?.textContent?.trim();
+
+    videoCaption.textContent = title || `Depoimento ${currentVideoIndex + 1}`;
+
+    videoCounter.textContent =
+        `${currentVideoIndex + 1} / ${testimonialVideos.length}`;
+
+    if (autoplay) {
+        expandedVideo.play().catch(() => {
+            // Se o navegador bloquear o autoplay,
+            // a pessoa poderá iniciar pelo controle do vídeo.
+        });
+    }
+}
+
+function openVideoLightbox(index) {
+    lastVideoFocus = document.activeElement;
+
+    videoLightbox.classList.add("open");
+    videoLightbox.setAttribute("aria-hidden", "false");
+
+    document.body.style.overflow = "hidden";
+
+    showExpandedVideo(index, true);
+
+    videoClose.focus();
+}
+
+function closeVideoLightbox() {
+    expandedVideo.pause();
+    expandedVideo.removeAttribute("src");
+    expandedVideo.load();
+
+    videoLightbox.classList.remove("open");
+    videoLightbox.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+    if (lastVideoFocus) {
+        lastVideoFocus.focus();
+    }
+}
+
+function nextExpandedVideo() {
+    showExpandedVideo(currentVideoIndex + 1, true);
+}
+
+function previousExpandedVideo() {
+    showExpandedVideo(currentVideoIndex - 1, true);
+}
+
+/* Clique no vídeo original para ampliar */
+testimonialVideos.forEach((video, index) => {
+    video.style.cursor = "pointer";
+
+    video.addEventListener("click", () => {
+        openVideoLightbox(index);
+    });
+
+    video.setAttribute("tabindex", "0");
+
+    video.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openVideoLightbox(index);
+        }
+    });
+});
+
+/* Botões */
+videoClose.addEventListener("click", closeVideoLightbox);
+videoNext.addEventListener("click", nextExpandedVideo);
+videoPrev.addEventListener("click", previousExpandedVideo);
+
+/* Clique fora do vídeo fecha */
+videoLightbox.addEventListener("click", (event) => {
+    if (event.target === videoLightbox) {
+        closeVideoLightbox();
+    }
+});
+
+/* Teclado */
+document.addEventListener("keydown", (event) => {
+    if (!videoLightbox.classList.contains("open")) return;
+
+    // Não intercepta setas enquanto a pessoa
+    // estiver usando os controles do próprio vídeo.
+    if (event.key === "Escape") {
+        closeVideoLightbox();
+    }
+});
+
+/* Garante que os vídeos não continuem tocando ao fechar */
+videoLightbox.addEventListener("transitionend", () => {
+    if (!videoLightbox.classList.contains("open")) {
+        expandedVideo.pause();
+    }
+});
