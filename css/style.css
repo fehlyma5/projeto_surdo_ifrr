@@ -1158,3 +1158,11 @@ body.high-contrast .gallery-section {
         font-size: 15px;
     }
 }
+
+
+/* Acessibilidade do botão VLibras */
+:root {
+    --vlibras-btn-focus-visible-outline: 3px solid #F2B705;
+    --vlibras-btn-focus-visible-shadow: 0 0 0 4px #1261A0;
+    --vlibras-btn-hover-filter: brightness(1.15);
+}
